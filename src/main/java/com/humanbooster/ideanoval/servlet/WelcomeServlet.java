@@ -25,6 +25,7 @@ public class WelcomeServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+        // Redirection vers la page submit_idea.jsp
+        request.getRequestDispatcher("submit_idea.jsp").forward(request, response);
     }
 }

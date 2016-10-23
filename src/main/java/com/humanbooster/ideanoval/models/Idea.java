@@ -36,13 +36,10 @@ public class Idea implements Serializable{
     public Idea() {
     }
 
-    public Idea(String title, String description, boolean active, Date publicationDate, boolean votable,
-                CategoryIdea category, User user) {
+    public Idea(String title, String description, CategoryIdea category, User user) {
         this.title = title;
         this.description = description;
-        this.active = active;
-        this.publicationDate = publicationDate;
-        this.votable = votable;
+        this.publicationDate = new Date();
         this.category = category;
         this.user = user;
     }

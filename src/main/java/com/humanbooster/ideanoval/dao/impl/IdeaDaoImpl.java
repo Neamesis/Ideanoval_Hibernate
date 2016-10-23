@@ -1,9 +1,7 @@
 package com.humanbooster.ideanoval.dao.impl;
 
 import com.humanbooster.ideanoval.dao.IdeaDao;
-import com.humanbooster.ideanoval.dao.UserDao;
 import com.humanbooster.ideanoval.models.Idea;
-import com.humanbooster.ideanoval.models.User;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;
@@ -11,6 +9,8 @@ import org.hibernate.boot.Metadata;
 import org.hibernate.boot.MetadataSources;
 import org.hibernate.boot.registry.StandardServiceRegistry;
 import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
+
+import java.util.List;
 
 /**
  * Created by Nea on 23/10/2016.
@@ -21,13 +21,22 @@ public class IdeaDaoImpl implements IdeaDao{
     private Transaction transaction;
 
     @Override
-    public void addIdea(Idea idea) {
+    public boolean addIdea(Idea idea) {
+        if (session.save(idea) != null) {
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public void deleteIdea (Idea idea) {
 
     }
 
     @Override
-    public void deleteUIdea(Idea idea) {
-
+    public List<Idea> findAll() {
+        List<Idea> allIdeas = session.createQuery("FROM Idea").getResultList();
+        return allIdeas;
     }
 
     /**
@@ -86,7 +95,4 @@ public class IdeaDaoImpl implements IdeaDao{
     public void setCurrentTransaction(Transaction currentTransaction) {
         this.transaction = currentTransaction;
     }
-
-
-
 }
