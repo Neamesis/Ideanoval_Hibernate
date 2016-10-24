@@ -36,6 +36,29 @@ public class Idea implements Serializable{
     public Idea() {
     }
 
+    /**
+     * Constructeur provisoire afin de simplifier la mise en place de l'application
+     * @param title
+     * @param description
+     */
+    public Idea(String title, String description) {
+        this.title = title;
+        this.description = description;
+    }
+
+    /**
+     * Constructeur provisoire afin de simplifier la mise en place de l'application
+     * @param title
+     * @param description
+     * @param user
+     */
+    public Idea(String title, String description, User user) {
+        this.title = title;
+        this.description = description;
+        this.publicationDate = new Date();
+        this.user = user;
+    }
+
     public Idea(String title, String description, CategoryIdea category, User user) {
         this.title = title;
         this.description = description;

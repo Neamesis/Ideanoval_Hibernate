@@ -1,6 +1,10 @@
 package com.humanbooster.ideanoval.servlet;
 
+import com.humanbooster.ideanoval.models.Idea;
+import com.humanbooster.ideanoval.models.User;
+import com.humanbooster.ideanoval.service.IdeaService;
 import com.humanbooster.ideanoval.service.UserService;
+import com.humanbooster.ideanoval.service.impl.IdeaServiceImpl;
 import com.humanbooster.ideanoval.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
@@ -17,9 +21,29 @@ import java.io.IOException;
 public class WelcomeServlet extends HttpServlet {
 
     private UserService us = new UserServiceImpl();
+    private IdeaService is = new IdeaServiceImpl();
 
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+        String ideaTitle = request.getParameter("TITLE");
+        String ideaDescription = request.getParameter("DESCRIPTION");
+
+        try {
+            User user = us.getUserById(request.getSession().getAttribute("ID").toString());
+            System.out.println(user);
+            Idea idea = new Idea(ideaTitle, ideaDescription, user);
+            System.out.println(idea);
+
+            is.addIdea(ideaTitle, ideaDescription, user);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+
+
+
 
 
     }

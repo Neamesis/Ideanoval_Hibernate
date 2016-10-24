@@ -85,6 +85,12 @@ public class UserDaoImpl implements UserDao{
 
     }
 
+    @Override
+    public User findUserById(int id) {
+        User user = session.byId(User.class).load(id);
+        return user;
+    }
+
     private static SessionFactory getSessionFactory() {
 
         StandardServiceRegistry standardRegistry = new StandardServiceRegistryBuilder().configure("/hibernate.cfg.xml")

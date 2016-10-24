@@ -18,4 +18,6 @@ public interface UserDao {
     public Session openCurrentSessionWithTransaction();
 
     public void closeCurrentSessionwithTransaction();
+
+    public User findUserById(int id);
 }

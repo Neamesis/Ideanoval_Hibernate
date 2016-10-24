@@ -17,6 +17,14 @@ public class IdeaServiceImpl  implements IdeaService {
     private IdeaDao id = new IdeaDaoImpl();
 
     @Override
+    public void addIdea(String title, String descrption, User user) {
+        Idea idea = new Idea(title, descrption, user);
+        id.openCurrentSessionWithTransaction();
+        id.addIdea(idea);
+        id.closeCurrentSessionwithTransaction();
+    }
+
+    @Override
     public void addIdea(String title, String descrption, CategoryIdea category, User user) {
         Idea idea = new Idea(title, descrption, category, user);
         id.openCurrentSessionWithTransaction();

@@ -38,4 +38,16 @@ public class UserServiceImpl implements UserService{
     public void deleteUser(User user) {
 
     }
+
+    @Override
+    public User getUserById(String id) {
+        if (id == null) {
+            return null;
+        } else {
+            ud.openCurrentSessionWithTransaction();
+            User user = ud.findUserById(Integer.parseInt(id));
+            ud.closeCurrentSessionwithTransaction();
+            return user;
+        }
+    }
 }

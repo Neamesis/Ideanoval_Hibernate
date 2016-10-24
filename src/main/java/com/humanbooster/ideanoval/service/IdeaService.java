@@ -11,9 +11,13 @@ import java.util.List;
  */
 public interface IdeaService {
 
+    public void addIdea(String ideaTitle, String ideaDescription, User user);
+
     public void addIdea(String title, String descrption, CategoryIdea category, User user);
 
     public void deleteIdea(Idea idea);
 
     public List<Idea> getAllIdeas();
+
+
 }
