@@ -50,4 +50,15 @@
         <url-pattern>/SubmitIdea</url-pattern>
     </servlet-mapping>
 
+  <servlet>
+    <servlet-name>SubmitCategoryServlet</servlet-name>
+    <display-name>SubmitCategoryServlet</display-name>
+    <servlet-class>com.humanbooster.ideanoval.servlet.SubmitCategoryServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>SubmitCategoryServlet</servlet-name>
+    <url-pattern>/SubmitCategoryServlet</url-pattern>
+    <url-pattern>/SubmitCategory</url-pattern>
+  </servlet-mapping>
+
 </web-app>

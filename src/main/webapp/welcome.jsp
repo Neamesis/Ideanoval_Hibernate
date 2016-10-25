@@ -23,6 +23,7 @@
 </ul>
 
 <a href="/SubmitIdea">Proposer une idée...</a>
+<a href="/SubmitCategory">Proposer une catégorie...</a>
 
 </body>
 </html>

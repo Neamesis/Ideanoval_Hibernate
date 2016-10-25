@@ -37,16 +37,13 @@ public class SubmitIdeaServlet extends HttpServlet {
 
             is.addIdea(ideaTitle, ideaDescription, user);
 
+            request.setAttribute("user", user);
+            request.setAttribute("ideas", is.getAllIdeas());
             request.getRequestDispatcher("welcome.jsp").include(request, response);
 
         } catch (Exception e) {
             e.printStackTrace();
         }
-
-
-
-
-
 
     }
 
