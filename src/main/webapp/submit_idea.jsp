@@ -13,7 +13,7 @@
 <body>
 <h1>Ideanoval</h1>
 
-<form action="WelcomeServlet" method="POST">
+<form action="SubmitIdeaServlet" method="POST">
     <fieldset>
         <legend>Proposer une idée</legend>
 

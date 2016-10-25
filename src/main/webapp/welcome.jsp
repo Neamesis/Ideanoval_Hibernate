@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nea
@@ -12,14 +13,16 @@
 </head>
 <body>
 <h4>Bonjour ${user.pseudo} !</h4>
-
+<p> idées :  </p>
 <ul>
-    <li>
-      <p> idées :  ${ideas}</p>
-    </li>
+    <c:forEach items="${ideas}" var="idea" >
+        <li>
+                ${idea.title}
+        </li>
+    </c:forEach>
 </ul>
 
-<a href="WelcomeServlet">Proposer une idée...</a>
+<a href="/SubmitIdea">Proposer une idée...</a>
 
 </body>
 </html>

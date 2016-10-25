@@ -1,7 +1,10 @@
 package com.humanbooster.ideanoval.servlet;
 
+import com.humanbooster.ideanoval.models.Idea;
 import com.humanbooster.ideanoval.models.User;
+import com.humanbooster.ideanoval.service.IdeaService;
 import com.humanbooster.ideanoval.service.UserService;
+import com.humanbooster.ideanoval.service.impl.IdeaServiceImpl;
 import com.humanbooster.ideanoval.service.impl.UserServiceImpl;
 
 import javax.servlet.ServletException;
@@ -10,6 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
+import java.util.List;
 
 /**
  * Created by Nea on 23/10/2016.
@@ -18,6 +22,7 @@ import java.io.IOException;
 public class LoginServlet extends HttpServlet {
 
     private UserService us = new UserServiceImpl();
+    private IdeaService is = new IdeaServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -30,6 +35,11 @@ public class LoginServlet extends HttpServlet {
 
             // Envoi de l'utilisateur via l'objet request
             request.setAttribute("user", user);
+
+            // Envoi de la liste d'idées
+            List<Idea> ideas = is.getAllIdeas();
+            request.setAttribute("ideas", is.getAllIdeas());
+            System.out.println("liste d'idées : " + ideas);
 
             // Redirection page d'accueil Welcome
             request.getRequestDispatcher("welcome.jsp").include(request, response);

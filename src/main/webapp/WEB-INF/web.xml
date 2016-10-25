@@ -28,15 +28,26 @@
   </servlet-mapping>
 
   <servlet>
-      <servlet-name>WelcomeServlet</servlet-name>
-      <display-name>WelcomeServlet</display-name>
-      <servlet-class>com.humanbooster.ideanoval.servlet.WelcomeServlet</servlet-class>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <display-name>WelcomeServlet</display-name>
+    <servlet-class>com.humanbooster.ideanoval.servlet.WelcomeServlet</servlet-class>
   </servlet>
+  <servlet-mapping>
+    <servlet-name>WelcomeServlet</servlet-name>
+    <url-pattern>/WelcomeServlet</url-pattern>
+    <url-pattern>/Welcome</url-pattern>
+  </servlet-mapping>
 
+
+  <servlet>
+      <servlet-name>SubmitIdeaServlet</servlet-name>
+      <display-name>SubmitIdeaServlet</display-name>
+      <servlet-class>com.humanbooster.ideanoval.servlet.SubmitIdeaServlet</servlet-class>
+  </servlet>
     <servlet-mapping>
-        <servlet-name>WelcomeServlet</servlet-name>
-        <url-pattern>/WelcomeServlet</url-pattern>
-        <url-pattern>/Welcome</url-pattern>
+        <servlet-name>SubmitIdeaServlet</servlet-name>
+        <url-pattern>/SubmitIdeaServlet</url-pattern>
+        <url-pattern>/SubmitIdea</url-pattern>
     </servlet-mapping>
 
 </web-app>
