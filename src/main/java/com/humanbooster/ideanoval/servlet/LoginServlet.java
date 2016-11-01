@@ -36,13 +36,8 @@ public class LoginServlet extends HttpServlet {
             // Envoi de l'utilisateur via l'objet request
             request.setAttribute("user", user);
 
-            // Envoi de la liste d'idées
-            List<Idea> ideas = is.getAllIdeas();
-            request.setAttribute("ideas", is.getAllIdeas());
-            System.out.println("liste d'idées : " + ideas);
-
-            // Redirection page d'accueil Welcome
-            request.getRequestDispatcher("welcome.jsp").include(request, response);
+            // Redirection vers la WelcomeServlet
+            request.getRequestDispatcher("WelcomeServlet").include(request, response);
         } else {
             // Si utilisateur null, redirection sur la page de login
             // TODO développer message d'erreur

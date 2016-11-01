@@ -24,6 +24,16 @@
     </c:forEach>
 </ul>
 
+<p> Catégories : </p>
+<ul>
+    <c:forEach items="${categories}" var="category" >
+        <li>
+                ${category.label} : ${category.description}
+        </li>
+    </c:forEach>
+</ul>
+
+
 <a href="/SubmitIdea">Proposer une idée...</a>
 <a href="/SubmitCategory">Proposer une catégorie...</a>
 

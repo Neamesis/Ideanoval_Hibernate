@@ -31,14 +31,8 @@ public class SubmitIdeaServlet extends HttpServlet {
 
         try {
             User user = us.getUserById(request.getSession().getAttribute("ID").toString());
-            System.out.println(user);
-            Idea idea = new Idea(ideaTitle, ideaDescription, user);
-            System.out.println(idea);
-
             is.addIdea(ideaTitle, ideaDescription, user);
-
             request.getRequestDispatcher("WelcomeServlet").forward(request, response);
-
         } catch (Exception e) {
             e.printStackTrace();
         }

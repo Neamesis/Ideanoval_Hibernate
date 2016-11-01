@@ -24,8 +24,7 @@ public class CategoryIdea implements Serializable {
     public CategoryIdea() {
     }
 
-    public CategoryIdea(List<Idea> ideas, String label, String description) {
-        this.ideas = ideas;
+    public CategoryIdea(String label, String description) {
         this.label = label;
         this.description = description;
     }

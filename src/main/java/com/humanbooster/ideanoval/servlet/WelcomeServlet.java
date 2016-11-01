@@ -1,7 +1,10 @@
 package com.humanbooster.ideanoval.servlet;
 
+import com.humanbooster.ideanoval.models.CategoryIdea;
 import com.humanbooster.ideanoval.models.Idea;
+import com.humanbooster.ideanoval.service.CategoryService;
 import com.humanbooster.ideanoval.service.IdeaService;
+import com.humanbooster.ideanoval.service.impl.CategoryServiceImpl;
 import com.humanbooster.ideanoval.service.impl.IdeaServiceImpl;
 
 import javax.servlet.ServletException;
@@ -19,6 +22,7 @@ import java.util.List;
 public class WelcomeServlet extends HttpServlet {
 
     private IdeaService is = new IdeaServiceImpl();
+    private CategoryService cs = new CategoryServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request, response);
@@ -26,7 +30,9 @@ public class WelcomeServlet extends HttpServlet {
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Idea> ideas = is.getAllIdeas();
+        List<CategoryIdea> categories = cs.getAllCategories();
         request.setAttribute("ideas", ideas);
+        request.setAttribute("categories", categories);
         request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 }
