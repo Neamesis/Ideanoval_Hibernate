@@ -12,6 +12,8 @@ public interface CategoryDao {
 
     public boolean addCategory(CategoryIdea categoryIdea);
 
+    public CategoryIdea findCategoryById(String id);
+
     public List<CategoryIdea> findAllCategories();
 
     public Session openCurrentSessionWithTransaction();

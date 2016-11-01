@@ -24,6 +24,14 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
+    public CategoryIdea findCategoryById(String id) {
+        cd.openCurrentSessionWithTransaction();
+        CategoryIdea category = cd.findCategoryById(id);
+        cd.closeCurrentSessionwithTransaction();
+        return category;
+    }
+
+    @Override
     public List<CategoryIdea> getAllCategories() {
         cd.openCurrentSessionWithTransaction();
         List<CategoryIdea> allCategories = cd.findAllCategories();

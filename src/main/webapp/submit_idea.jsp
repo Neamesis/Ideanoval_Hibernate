@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: Nea
@@ -24,6 +25,14 @@
 
         <label>Description :</label>
         <textarea name="DESCRIPTION" placeholder="Décrivez votre idée" ></textarea>
+        <br /> <br />
+
+        <p>Catégories liste déroulante</p>
+        <select name = "IDCATEGORY" size="1">
+            <c:forEach items="${categories}" var="category" >
+                <option value="${category.id}">${category.label} : ${category.description} </option>
+            </c:forEach>
+        </select>
         <br /> <br />
 
         <input type="submit" value="Soumettre l'idée" class="button" />

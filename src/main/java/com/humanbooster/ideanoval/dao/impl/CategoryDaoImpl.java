@@ -29,6 +29,12 @@ public class CategoryDaoImpl implements CategoryDao {
     }
 
     @Override
+    public CategoryIdea findCategoryById(String id) {
+        int idInt = Integer.parseInt(id);
+        return session.byId(CategoryIdea.class).load(idInt);
+    }
+
+    @Override
     public List<CategoryIdea> findAllCategories() {
         List<CategoryIdea> allCategories = session.createQuery("FROM CategoryIdea").getResultList();
         return allCategories;

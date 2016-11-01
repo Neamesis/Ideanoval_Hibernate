@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
+<%@ page contentType="text/html; charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
@@ -32,6 +32,14 @@
         </li>
     </c:forEach>
 </ul>
+
+<p>Catégories liste déroulante</p>
+<select>
+    <c:forEach items="${categories}" var="category" >
+        <option value="${category.id}">${category.label} : ${category.description} </option>
+    </c:forEach>
+
+</select>
 
 
 <a href="/SubmitIdea">Proposer une idée...</a>

@@ -11,5 +11,7 @@ public interface CategoryService {
 
     public void addCategory(String label, String description);
 
+    public CategoryIdea findCategoryById(String id);
+
     public List<CategoryIdea> getAllCategories();
 }
