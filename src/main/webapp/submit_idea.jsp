@@ -11,33 +11,38 @@
 <html>
 <head>
     <title>Proposer une idée</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<h1>Ideanoval</h1>
 
-<form action="SubmitIdeaServlet" method="POST">
-    <fieldset>
-        <legend>Proposer une idée</legend>
+<jsp:include page="header.jsp"/>
+<div id ="page">
+    <body>
+    <h1>Ideanoval</h1>
 
-        <label>Titre de l'idée : </label>
-        <input type="text" name="TITLE" placeholder="Titre de l'idée" />
-        <br /> <br />
+    <form action="SubmitIdeaServlet" method="POST">
+        <fieldset>
+            <legend>Proposer une idée</legend>
 
-        <label>Description :</label>
-        <textarea name="DESCRIPTION" placeholder="Décrivez votre idée" ></textarea>
-        <br /> <br />
+            <label>Titre de l'idée : </label>
+            <input type="text" name="TITLE" placeholder="Titre de l'idée" />
+            <br /> <br />
 
-        <p>Choisissez une catégorie associée :</p>
-        <select name = "IDCATEGORY" size="1">
-            <c:forEach items="${categories}" var="category" >
-                <option value="${category.id}">${category.label} : ${category.description} </option>
-            </c:forEach>
-        </select>
-        <br /> <br />
+            <label>Description :</label>
+            <textarea name="DESCRIPTION" placeholder="Décrivez votre idée" ></textarea>
+            <br /> <br />
 
-        <input type="submit" value="Soumettre l'idée" class="button" />
-    </fieldset>
-</form>
+            <p>Choisissez une catégorie associée :</p>
+            <select name = "IDCATEGORY" size="1">
+                <c:forEach items="${categories}" var="category" >
+                    <option value="${category.id}">${category.label} : ${category.description} </option>
+                </c:forEach>
+            </select>
+            <br /> <br />
 
-</body>
+            <input type="submit" value="Soumettre l'idée" class="button" />
+        </fieldset>
+    </form>
+
+    </body>
+</div>
 </html>

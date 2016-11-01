@@ -12,30 +12,36 @@
 <html>
 <head>
     <title>Ideanoval</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<h4>Bonjour ${user.pseudo} !</h4>
+<jsp:include page="header.jsp"/>
 
-<h1> Idées :  </h1>
-<table>
-    <tr>
-        <td>Titre</td>
-        <td>Description</td>
-    </tr>
-    <c:forEach items="${ideas}" var="idea" >
+<div id ="page">
+    <body>
+    <h4>Bonjour ${user.pseudo} !</h4>
+
+    <h1> Idées :  </h1>
+    <table>
         <tr>
-            <td>${idea.title}</td>
-            <td>${idea.description}</td>
-
-            <!-- TODO Afficher les catégories correspondant aux idées -->
-                <%--<td><c:out value="${idea.category}"/></td>--%>
+            <td><h2>Titre</h2></td>
+            <td><h2>Description</h2></td>
         </tr>
-    </c:forEach>
+        <c:forEach items="${ideas}" var="idea" >
+            <tr>
+                <td>${idea.title}</td>
+                <td>${idea.description}</td>
 
-</table>
-<br>
-<a href="/SubmitIdea">Proposer une idée...</a> <br>
-<a href="/SubmitCategory">Proposer une catégorie...</a>
+                <!-- TODO Afficher les catégories correspondant aux idées -->
+                    <%--<td><c:out value="${idea.category}"/></td>--%>
+            </tr>
+        </c:forEach>
 
-</body>
+    </table>
+    <br>
+    <a href="/SubmitIdea">Proposer une idée...</a> <br>
+    <a href="/SubmitCategory">Proposer une catégorie...</a>
+
+    </body>
+
+</div>
 </html>

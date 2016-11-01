@@ -9,24 +9,28 @@
 <html>
 <head>
     <title>Création de catégorie</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
-<form action="SubmitCategoryServlet" method="POST">
 
-    <fieldset>
-        <legend>Proposer une catégorie</legend>
+<jsp:include page="header.jsp"/>
+<div id ="page">
+    <body>
+    <form action="SubmitCategoryServlet" method="POST">
 
-        <label>Titre de la catégorie : </label>
-        <input type="text" name="TITLE" placeholder="Titre de la catégorie" />
-        <br /> <br />
+        <fieldset>
+            <legend>Proposer une catégorie</legend>
 
-        <label>Description :</label>
-        <textarea name="DESCRIPTION" placeholder="Décrivez votre catégorie" ></textarea>
-        <br /> <br />
+            <label>Titre de la catégorie : </label>
+            <input type="text" name="TITLE" placeholder="Titre de la catégorie" />
+            <br /> <br />
 
-        <input type="submit" value="Soumettre la catégorie" class="button" />
-    </fieldset>
-</form>
+            <label>Description :</label>
+            <textarea name="DESCRIPTION" placeholder="Décrivez votre catégorie" ></textarea>
+            <br /> <br />
 
-</body>
+            <input type="submit" value="Soumettre la catégorie" class="button" />
+        </fieldset>
+    </form>
+    </body>
+</div>
 </html>

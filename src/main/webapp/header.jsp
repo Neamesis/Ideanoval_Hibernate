@@ -1,21 +1,21 @@
 <%--
   Created by IntelliJ IDEA.
-  User: Nea
-  Date: 25/10/2016
-  Time: 16:40
+  User: Julie
+  Date: 01/11/2016
+  Time: 19:46
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
     <title>Title</title>
-    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
+<body>
+<div id ="header">
 
-<jsp:include page="header.jsp"/>
-<div id ="page">
-    <body>
-
-    </body>
+    <div id="logo">
+        <h1>Ideanoval : des idées en folie !</h1>
+    </div>
 </div>
+</body>
 </html>

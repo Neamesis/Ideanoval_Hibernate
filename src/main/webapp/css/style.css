@@ -1,1 +1,32 @@
-@CHARSET "ISO-8859-1";
+*{
+    box-sizing: border-box;
+}
+/* reset CSS */
+body, h1, h2, h3, h4{
+
+    margin : 0;
+}
+
+body{
+    background: silver;
+}
+
+/* Structure de page */
+#page{
+    background: floralwhite;
+    height: 100vh;
+    margin : 0 auto;
+    padding:  15px;
+    width: 960px;
+}
+#header{
+    background: dimgrey;
+    height: 120px;
+    margin: 0 auto;
+    padding-top: 20px;
+    width: 960px;
+}
+#logo{
+    background: wheat;
+    text-align: center;
+}

@@ -9,20 +9,24 @@
 <html>
 <head>
     <title>Connexion</title>
+    <link href="css/style.css" rel="stylesheet" type="text/css"/>
 </head>
-<body>
 
-<form action="LoginServlet" method="POST">
-    <input type="email" name="EMAIL" placeholder="Email" />
+<jsp:include page="header.jsp"/>
+<div id ="page">
+    <body>
+    <form action="LoginServlet" method="POST">
+        <input type="email" name="EMAIL" placeholder="Email" />
+        <br /> <br />
+        <input type="password" name="PASSWORD" placeholder="Mot de passe" />
+        <br /> <br />
+        <input type="submit" value="Se connecter" class="button" />
+    </form>
+
     <br /> <br />
-    <input type="password" name="PASSWORD" placeholder="Mot de passe" />
-    <br /> <br />
-    <input type="submit" value="Se connecter" class="button" />
-</form>
 
-<br /> <br />
+    <p>Pas encore inscrit ? <a href="/registration.jsp">S'inscrire</a></p>
 
-<p>Pas encore inscrit ? <a href="/registration.jsp">S'inscrire</a></p>
-
-</body>
+    </body>
+</div>
 </html>
