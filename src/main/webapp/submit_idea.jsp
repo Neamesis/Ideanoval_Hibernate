@@ -27,7 +27,7 @@
         <textarea name="DESCRIPTION" placeholder="Décrivez votre idée" ></textarea>
         <br /> <br />
 
-        <p>Catégories liste déroulante</p>
+        <p>Choisissez une catégorie associée :</p>
         <select name = "IDCATEGORY" size="1">
             <c:forEach items="${categories}" var="category" >
                 <option value="${category.id}">${category.label} : ${category.description} </option>

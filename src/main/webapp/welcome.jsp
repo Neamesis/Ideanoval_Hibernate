@@ -15,34 +15,26 @@
 </head>
 <body>
 <h4>Bonjour ${user.pseudo} !</h4>
-<p> idées :  </p>
-<ul>
+
+<h1> Idées :  </h1>
+<table>
+    <tr>
+        <td>Titre</td>
+        <td>Description</td>
+    </tr>
     <c:forEach items="${ideas}" var="idea" >
-        <li>
-                ${idea.title}
-        </li>
-    </c:forEach>
-</ul>
+        <tr>
+            <td>${idea.title}</td>
+            <td>${idea.description}</td>
 
-<p> Catégories : </p>
-<ul>
-    <c:forEach items="${categories}" var="category" >
-        <li>
-                ${category.label} : ${category.description}
-        </li>
-    </c:forEach>
-</ul>
-
-<p>Catégories liste déroulante</p>
-<select>
-    <c:forEach items="${categories}" var="category" >
-        <option value="${category.id}">${category.label} : ${category.description} </option>
+            <!-- TODO Afficher les catégories correspondant aux idées -->
+                <%--<td><c:out value="${idea.category}"/></td>--%>
+        </tr>
     </c:forEach>
 
-</select>
-
-
-<a href="/SubmitIdea">Proposer une idée...</a>
+</table>
+<br>
+<a href="/SubmitIdea">Proposer une idée...</a> <br>
 <a href="/SubmitCategory">Proposer une catégorie...</a>
 
 </body>

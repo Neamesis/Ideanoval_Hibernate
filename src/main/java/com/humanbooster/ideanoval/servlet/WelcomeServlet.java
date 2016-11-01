@@ -31,8 +31,8 @@ public class WelcomeServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         List<Idea> ideas = is.getAllIdeas();
         List<CategoryIdea> categories = cs.getAllCategories();
-        request.setAttribute("ideas", ideas);
         request.setAttribute("categories", categories);
+        request.setAttribute("ideas", ideas);
         request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 }

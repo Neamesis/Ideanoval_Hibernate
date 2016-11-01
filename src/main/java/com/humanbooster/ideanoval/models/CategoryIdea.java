@@ -14,7 +14,8 @@ public class CategoryIdea implements Serializable {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @OneToMany(mappedBy = "category")
+    // TODO Trouver le type de Fetch à mettre pour pouvoir afficher les catégories d'idées
+    @OneToMany(mappedBy = "category", fetch = FetchType.EAGER)
     private List<Idea> ideas;
 
     private String label;
