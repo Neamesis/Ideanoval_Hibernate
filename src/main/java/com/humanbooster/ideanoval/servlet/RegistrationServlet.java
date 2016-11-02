@@ -19,6 +19,7 @@ public class RegistrationServlet extends HttpServlet {
     private UserService us = new UserServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         us.addUser(request.getParameter("PSEUDO"),
                     request.getParameter("EMAIL"),
                     request.getParameter("PASSWORD"));

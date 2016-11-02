@@ -25,14 +25,16 @@
         <tr>
             <td><h2>Titre</h2></td>
             <td><h2>Description</h2></td>
+            <td><h2>Catégorie</h2></td>
+            <td><h2>Utilisateur</h2></td>
+
         </tr>
         <c:forEach items="${ideas}" var="idea" >
             <tr>
                 <td>${idea.title}</td>
                 <td>${idea.description}</td>
-
-                <!-- TODO Afficher les catégories correspondant aux idées -->
-                    <%--<td><c:out value="${idea.category}"/></td>--%>
+                <td><c:out value="${idea.category.label}"/></td>
+                <td>${idea.user.pseudo}</td>
             </tr>
         </c:forEach>
 

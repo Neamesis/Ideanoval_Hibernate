@@ -31,6 +31,7 @@ public class SubmitIdeaServlet extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+        request.setCharacterEncoding("UTF-8");
         String ideaTitle = request.getParameter("TITLE");
         String ideaDescription = request.getParameter("DESCRIPTION");
         String idCategory = request.getParameter("IDCATEGORY");

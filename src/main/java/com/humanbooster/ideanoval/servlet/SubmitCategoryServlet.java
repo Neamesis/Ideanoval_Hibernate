@@ -19,6 +19,7 @@ public class SubmitCategoryServlet extends HttpServlet {
     private CategoryService cs = new CategoryServiceImpl();
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.setCharacterEncoding("UTF-8");
         String categoryTitle = request.getParameter("TITLE");
         String categoryDescription = request.getParameter("DESCRIPTION");
 
