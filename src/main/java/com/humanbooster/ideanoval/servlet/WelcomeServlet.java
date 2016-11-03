@@ -33,6 +33,7 @@ public class WelcomeServlet extends HttpServlet {
         List<CategoryIdea> categories = cs.getAllCategories();
         request.setAttribute("categories", categories);
         request.setAttribute("ideas", ideas);
+        response.setCharacterEncoding("UTF-8");
         request.getRequestDispatcher("welcome.jsp").forward(request, response);
     }
 }

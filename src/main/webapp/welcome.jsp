@@ -21,27 +21,21 @@
     <h4>Bonjour ${user.pseudo} !</h4>
 
     <h1> Idées :  </h1>
-    <table>
-        <tr>
-            <td><h2>Titre</h2></td>
-            <td><h2>Description</h2></td>
-            <td><h2>Catégorie</h2></td>
-            <td><h2>Utilisateur</h2></td>
 
-        </tr>
+    <div id="allIdeas">
         <c:forEach items="${ideas}" var="idea" >
-            <tr>
-                <td>${idea.title}</td>
+            <div class="anIdea">
+                <h2>${idea.title}</h2>
                 <td>${idea.description}</td>
-                <td><c:out value="${idea.category.label}"/></td>
-                <td>${idea.user.pseudo}</td>
-            </tr>
+                <p><c:out value="${idea.category.label}"/></p>
+                <p>${idea.user.pseudo}</p>
+            </div>
         </c:forEach>
+    </div>
 
-    </table>
     <br>
     <a href="/IdeanovalHibernate/SubmitIdea">Proposer une idée...</a> <br>
-    <a href="/SubmitCategory">Proposer une catégorie...</a>
+    <a href="/IdeanovalHibernate/SubmitCategory">Proposer une catégorie...</a>
 
     </body>
 

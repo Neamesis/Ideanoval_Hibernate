@@ -14,7 +14,6 @@ body{
 /* Structure de page */
 #page{
     background: floralwhite;
-    height: 100vh;
     margin : 0 auto;
     padding:  15px;
     width: 960px;
@@ -29,4 +28,19 @@ body{
 #logo{
     background: wheat;
     text-align: center;
+}
+
+div#allIdeas{
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-around;
+}
+
+div.anIdea{
+    border: 1px solid cadetblue;
+    max-width: 250px;
+    width: 250px;
+    padding: 10px 15px;
+    margin: 10px auto;
 }
