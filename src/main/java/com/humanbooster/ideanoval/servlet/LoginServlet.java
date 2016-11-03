@@ -37,7 +37,7 @@ public class LoginServlet extends HttpServlet {
             request.setAttribute("user", user);
 
             // Redirection vers la WelcomeServlet
-            request.getRequestDispatcher("WelcomeServlet").include(request, response);
+            request.getRequestDispatcher("Welcome").include(request, response);
         } else {
             // Si utilisateur null, redirection sur la page de login
             // TODO développer message d'erreur
@@ -47,6 +47,5 @@ public class LoginServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
     }
 }

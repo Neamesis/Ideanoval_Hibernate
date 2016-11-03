@@ -40,7 +40,7 @@
 
     </table>
     <br>
-    <a href="/SubmitIdea">Proposer une idée...</a> <br>
+    <a href="/IdeanovalHibernate/SubmitIdea">Proposer une idée...</a> <br>
     <a href="/SubmitCategory">Proposer une catégorie...</a>
 
     </body>

@@ -40,7 +40,7 @@ public class SubmitIdeaServlet extends HttpServlet {
             User user = us.getUserById(request.getSession().getAttribute("ID").toString());
             CategoryIdea categoryIdea = cs.findCategoryById(idCategory);
             is.addIdea(ideaTitle, ideaDescription, categoryIdea, user);
-            request.getRequestDispatcher("WelcomeServlet").forward(request, response);
+            request.getRequestDispatcher("Welcome").forward(request, response);
         } catch (Exception e) {
             e.printStackTrace();
         }

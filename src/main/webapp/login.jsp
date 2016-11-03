@@ -15,7 +15,7 @@
 <jsp:include page="header.jsp"/>
 <div id ="page">
     <body>
-    <form action="LoginServlet" method="POST">
+    <form action="Login" method="POST">
         <input type="email" name="EMAIL" placeholder="Email" />
         <br /> <br />
         <input type="password" name="PASSWORD" placeholder="Mot de passe" />

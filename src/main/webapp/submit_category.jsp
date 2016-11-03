@@ -15,7 +15,7 @@
 <jsp:include page="header.jsp"/>
 <div id ="page">
     <body>
-    <form action="SubmitCategoryServlet" method="POST">
+    <form action="SubmitCategory" method="POST">
 
         <fieldset>
             <legend>Proposer une catégorie</legend>

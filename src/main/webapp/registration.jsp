@@ -14,7 +14,7 @@
 	<h1>Inscription</h1>
 	<h2>Des idées en vrac</h2>
 
-	<form action="RegistrationServlet" method="POST">
+	<form action="Registration" method="POST">
 		<input type="text" name="PSEUDO" placeholder="Pseudo" />
 		<br /> <br />
 		<input type="email" name="EMAIL" placeholder="Email" />

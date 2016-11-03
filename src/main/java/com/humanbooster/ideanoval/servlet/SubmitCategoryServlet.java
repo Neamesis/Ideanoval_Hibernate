@@ -24,7 +24,7 @@ public class SubmitCategoryServlet extends HttpServlet {
         String categoryDescription = request.getParameter("DESCRIPTION");
 
         cs.addCategory(categoryTitle, categoryDescription);
-        request.getRequestDispatcher("WelcomeServlet").forward(request, response);
+        request.getRequestDispatcher("Welcome").forward(request, response);
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
